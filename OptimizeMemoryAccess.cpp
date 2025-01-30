@@ -48,3 +48,15 @@ namespace {
 
 char AMDGPUMemoryOptimizer::ID = 0;
 static RegisterPass<AMDGPUMemoryOptimizer> X("amdgpu-mem-opt", "AMDGPU Memory Access Optimization", false, false);
+
+
+// Brother how to run the file 
+
+clang++ -shared -o AMDGPUMemoryOptimizer.so -fPIC OptimizeMemoryAccess.cpp
+    $(llvm-config --cxxflags --ldflags --system-libs --libs core)
+
+// Command to compile:
+// clang -shared -o OptimizeAMDGPU.so -fPIC OptimizeAMDGPU.cpp $(llvm-config --cxxflags --ldflags --system-libs --libs core)
+
+// Command to run:
+// opt -load ./OptimizeAMDGPU.so -opt-amdgpu < input.ll > output.ll
