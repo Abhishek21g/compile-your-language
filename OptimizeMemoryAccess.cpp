@@ -52,8 +52,7 @@ static RegisterPass<AMDGPUMemoryOptimizer> X("amdgpu-mem-opt", "AMDGPU Memory Ac
 
 // Brother how to run the file 
 
-clang++ -shared -o AMDGPUMemoryOptimizer.so -fPIC OptimizeMemoryAccess.cpp
-    $(llvm-config --cxxflags --ldflags --system-libs --libs core)
+// clang++ -shared -o AMDGPUMemoryOptimizer.so -fPIC OptimizeMemoryAccess.cpp $(llvm-config --cxxflags --ldflags --system-libs --libs core)
 
 // Command to compile:
 // clang -shared -o OptimizeAMDGPU.so -fPIC OptimizeAMDGPU.cpp $(llvm-config --cxxflags --ldflags --system-libs --libs core)
